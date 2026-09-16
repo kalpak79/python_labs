@@ -1,2 +1,2 @@
 m = int(input("Минуты: "))
-print(m//60,m%60,sep=":")
+print(f"{m//60}:{m%60:02d}")
