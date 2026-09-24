@@ -47,6 +47,7 @@ test_col_sums=[
     [[0, 0], [0, 0]],
     [[1, 2], [3]]
 ]
+print()
 print("TRANSPOSE")
 testing(transpose,test_transpose)
 print()
@@ -55,3 +56,4 @@ testing(row_sums,test_row_sums)
 print()
 print("COL_SUMS")
 testing(col_sums,test_col_sums)
+print()

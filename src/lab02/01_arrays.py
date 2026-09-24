@@ -4,7 +4,7 @@ def min_max(nums: list[float | int]):
     if len(nums)==0:
         raise ValueError()
     else:
-        return ([min(nums),max(nums)])
+        return tuple([min(nums),max(nums)])
 
     
 def unique_sorted(nums: list[float | int]):
@@ -43,6 +43,8 @@ test_flatten=[
     [[1], [], [2, 3]],
     [[1, 2], "ab"]
 ]
+
+print()
 print("MIN_MAX")
 testing(min_max, test_minmax)
 print()
@@ -51,3 +53,4 @@ testing(unique_sorted, test_unique_sorted)
 print()
 print("FLATTEN")
 testing(flatten,test_flatten)
+print()
