@@ -1,14 +1,28 @@
 from ..lib import testing
 
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                # Обмен элементов
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+    return arr
+
 def min_max(nums: list[float | int]):
     if len(nums)==0:
         raise ValueError()
     else:
-        return tuple([min(nums),max(nums)])
+        s = bubble_sort(nums)
+        return tuple([s[0],s[-1]])
 
     
 def unique_sorted(nums: list[float | int]):
-    return sorted(set(nums))
+    return sorted(set(bubble_sort(nums)))
 
 
 def flatten(mat: list[list | tuple]):
