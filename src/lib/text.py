@@ -1,3 +1,5 @@
+import re
+
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True):
      
     if not isinstance(text, str):
@@ -11,6 +13,11 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True):
 
     if yo2e:
         t = t.replace("ё", "е").replace("Ё", "Е")
+
+    result = result.replace("\t", " ")
+    result = result.replace("\r", " ")
+    result = result.replace("\n", " ")
+    
     if casefold:
         t = t.casefold()
 
@@ -28,23 +35,9 @@ def tokenize(text: str) -> list[str]:
     
     t = text
     t = normalize(t)
-    an = ""
-    count = 0
-
-    for i in t:
-        if i.isalnum() or (
-            (i == "-" or i == '_')  # проверки для тире, подч.
-            and count > 0 and count + 1 < len(t)
-            and t[count - 1].isalnum() and t[count + 1].isalnum()
-        ): result += i
-        else:result += " "
-
-        count += 1
-
-    if not result.split():
-        raise ValueError("В тексте нет слов")
-
-    return result.split()
+    r = r"\w+(?:-\w+)*" # поиск букв, цифр, тире
+    an = re.findall(r, t)
+    return an
 
 
 def count_freq(tokens: list[str]) -> dict[str, int]:
