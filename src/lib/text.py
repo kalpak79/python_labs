@@ -14,9 +14,9 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True):
     if yo2e:
         t = t.replace("ё", "е").replace("Ё", "Е")
 
-    result = result.replace("\t", " ")
-    result = result.replace("\r", " ")
-    result = result.replace("\n", " ")
+    t = t.replace("\t", " ")
+    t = t.replace("\r", " ")
+    t = t.replace("\n", " ")
     
     if casefold:
         t = t.casefold()
