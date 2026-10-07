@@ -48,6 +48,7 @@ test_top_n=[
 ## NORMALIZE
 print()
 print("NORMALIZE")
+print()
 testing(normalize,test_normalize)
 print()
 
@@ -55,18 +56,21 @@ print()
 ## TOKENIZE
 print()
 print("TOKENIZE")
+print()
 testing(tokenize,test_tokenize)
 print()
 
 ## COUNT_FREQ
 print()
 print("COUNT_FREQ")
+print()
 testing(count_freq,test_count_freq)
 print()
 
 ## TOP_N
 print()
 print("TOP_N")
+print()
 print("({'a': 3, 'b': 2, 'c': 1},2)","->",top_n({'a': 3, 'b': 2, 'c': 1},2))
 print("({'bb': 2, 'aa': 2, 'cc': 1}, 2)","->",top_n({'bb': 2, 'aa': 2, 'cc': 1},2))
 print()
