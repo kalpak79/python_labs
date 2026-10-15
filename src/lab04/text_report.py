@@ -8,21 +8,30 @@ def main():
         print("Ошибка: файл не найден")
         return
 
-    tokens = tokenize(normalize(raw_text))
-    freq = count_freq(tokens)
-    total_words = len(tokens)
-    unique_words = len(freq)
+    try:
+    
 
-    all_rows = sorted(freq.items(), key=lambda x: (-x[1], x[0]))
-    top5 = top_n(freq, n=5)
+        tokens = tokenize(normalize(raw_text))
+        freq = count_freq(tokens)
+        total_words = len(tokens)
+        unique_words = len(freq)
 
-    write_csv(all_rows, "src/data/lab04/report.csv", header=("word", "count"))
+        all_rows = sorted(freq.items(), key=lambda x: (-x[1], x[0]))
+        top5 = top_n(freq, n=5)
+        write_csv(all_rows, "src/data/lab04/report.csv", header=("word", "count"))
+        print(f"Всего слов: {total_words}")
+        print(f"Уникальных слов: {unique_words}")
+        print("Топ-5:")
+        for word, count in top5:
+            print(f"{word}: {count}")
 
-    print(f"Всего слов: {total_words}")
-    print(f"Уникальных слов: {unique_words}")
-    print("Топ-5:")
-    for word, count in top5:
-        print(f"{word}: {count}")
+    except:
+        write_csv("", "src/data/lab04/report.csv", header=("word", "count"))
+        raise ValueError("Передан пустой файл")
+
+   
+
+    
 
 
 if __name__ == "__main__":
