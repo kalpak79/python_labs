@@ -49,7 +49,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     workbook.save(target) # Пишет книгу в .xlsx по пути target.
 
 def main():
-    csv_to_xlsx("data/lab05/samples/people.csv", "data/lab05/out/people.xlsx")
+    csv_to_xlsx("data/lab05/samples/employees.csv", "data/lab05/out/employees.xlsx")
 
 if __name__ == "__main__":
     main()

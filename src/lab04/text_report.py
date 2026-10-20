@@ -3,7 +3,7 @@ from ..lab04.io_txt_csv import read_text, write_csv
 
 def main():
     try:
-        raw_text = read_text("src/data/lab04/input.txt", encoding="utf-8")
+        raw_text = read_text("data/lab04/input.txt", encoding="utf-8")
     except FileNotFoundError:
         print("Ошибка: файл не найден")
         return
@@ -18,7 +18,7 @@ def main():
 
         all_rows = sorted(freq.items(), key=lambda x: (-x[1], x[0]))
         top5 = top_n(freq, n=5)
-        write_csv(all_rows, "src/data/lab04/report.csv", header=("word", "count"))
+        write_csv(all_rows, "data/lab04/report.csv", header=("word", "count"))
         print(f"Всего слов: {total_words}")
         print(f"Уникальных слов: {unique_words}")
         print("Топ-5:")
@@ -26,7 +26,7 @@ def main():
             print(f"{word}: {count}")
 
     except:
-        write_csv("", "src/data/lab04/report.csv", header=("word", "count"))
+        write_csv("", "data/lab04/report.csv", header=("word", "count"))
         raise ValueError("Передан пустой файл")
 
    

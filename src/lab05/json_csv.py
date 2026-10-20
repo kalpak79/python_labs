@@ -83,7 +83,8 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         json.dump(rows, file, ensure_ascii=False, indent=2)
 
 def main():
-    csv_to_json("data/lab05/samples/teachers.csv", "data/lab05/out/teachers_from_csv.json")
+    json_to_csv("data/lab05/samples/employees.json", "data/lab05/out/employees_from_json.csv")
+    csv_to_json("data/lab05/samples/employees.csv", "data/lab05/out/employees_from_csv.json")
 
 if __name__ == "__main__":
     main()
