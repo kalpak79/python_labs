@@ -5,9 +5,9 @@
     "city": "SPB"
   },
   {
-    "name": "Bob",
-    "age": 25,
-    "city": "Moscow"
+    "name": false,
+    "age": null,
+    "city": ""
   },
   {
     "name": "Carlos",
