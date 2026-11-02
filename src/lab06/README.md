@@ -156,34 +156,32 @@ python -m src.lab06.cli_convert <команда> [параметры]
 
 ---
 
-## Тест-кейс А: `cat`
+## Тест-кейс А: `bird`
 
-![](images/lab06/)
+![](../../images/lab06/1a.png)
 
 ## Тест-кейс B: `stats`
 **Входной файл (`data/lab06/text.txt`):**
 ```
-Кот сидел на окне. Другой кот подошел к окну и тоже сел на окно. 
-Первый кот посмотрел на второго кота. Кот, кот, еще один кот!
-Окно было чистым, а солнце светило ярко.
+Птица сидела на ветке. Другая птица подлетела к ветке и тоже села на ветку. Первая птица посмотрела на вторую птицу. Птица, птица, еще одна птица! Ветка была сухой, а ветер дул сильно.
 ```
 
-![](images/lab06/)
+![](../../images/lab06/2a.png)
 
 ## Тест-кейс C: конвертеры
 **Команды:**
 ```
-python -m src.lab06.cli_convert json2csv --in data/samples/people.json --out data/out/people.csv
-python -m src.lab06.cli_convert csv2json --in data/samples/people.csv --out data/out/people.json
-python -m src.lab06.cli_convert csv2xlsx --in data/samples/people.csv --out data/out/people.xlsx
+python -m src.lab06.cli_convert json2csv --in data/lab06/samples/people.json --out data/lab06/out/people.csv
+python -m src.lab06.cli_convert csv2json --in data/lab06/samples/people.csv --out data/lab06/out/people.json
+python -m src.lab06.cli_convert csv2xlsx --in data/lab06/samples/people.csv --out data/lab06/out/people.xlsx
 ```
 **Вывод в консоль (для каждой команды):**
 ```
 Готово: data/samples/people.json -> data/out/people.csv
 ```
-**Результат:** в папке `data/out/` созданы файлы `people.csv`, `people.json`, `people.xlsx`.
+**Результат:** в папке `data/lab06/out/` созданы файлы `people.csv`, `people.json`, `people.xlsx`.
 
-![](images/lab06/021.png)
+![](../../images/lab06/3a.png)
 
 ## Тест-кейс D: ошибки
 **Файл не найден:**
@@ -202,15 +200,15 @@ python -m src.lab06.cli_text stats --input src/data/samples/people.txt --top 0
 usage: cli_text.py [-h] {cat,stats} ...
 cli_text.py: error: --top должно быть положительным числом
 ```
-![](images/lab06/error.png)
+![](../../images/lab06/4a.png)
 
 ## Тест-кейс E: `--help`
 ```
 python -m src.lab06.cli_text --help
 ```
-![](images/lab06/help1.png)
+![](../../images/lab06/5a.png)
 
 ```
 python -m src.lab06.cli_convert --help
 ```
-![](images/lab06/help2.png)
+![](../../images/lab06/6a.png)
