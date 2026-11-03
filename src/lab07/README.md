@@ -334,7 +334,7 @@ if __name__ == "__main__":
 python -m src.lab07.check
 OK: 794 проверок
 ```
-![](images/lab07/check.png)
+![](../../images/lab07/1a.png)
 
 ---
 
@@ -366,7 +366,7 @@ two_sum,10000,brute,7.468968
 two_sum,10000,fast,0.003619
 ```
 
-![](images/lab07/bench.png)
+![](../../images/lab07/2a.png)
 
 ---
 
