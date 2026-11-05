@@ -129,11 +129,11 @@ def update_student(rec: dict, **fields) -> dict:
     return new_data
 
 def main():
-    student = make_student("Ковров Андрей Владимирович", "2008-04-16", "БИВТ-26-6-5", 4.9)
+    student = make_student("Никоноров Егор Павлович", "2008-10-04", "БИВТ-26-6-5", 4.9)
     print(student)
 
     try:
-        student = make_student("Далевич Владислав", "2008-02-30", "БИВТ-26-6-4", 4.9)
+        student = make_student("Далевич Далевичев", "2008-02-30", "БИВТ-26-6-4", 4.9)
     except ValueError as e:
         print(f"Ошибка: {e}")
 
