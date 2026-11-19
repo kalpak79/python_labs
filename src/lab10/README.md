@@ -349,7 +349,7 @@ def dll_repr(head: DoublyNode | None) -> str:
     print("([)]:", is_balanced("([)]"))
     print("RPN '3 4 + 2 *':", rpn("3 4 + 2 *"))
 ```
-![](../../images/lab10/img02.png)
+![](../../images/lab10/1.png)
 
 ``` python
 head = ll_from_list()
@@ -376,11 +376,11 @@ dhead = dll_from_list(["A", "B", "C"])
 dhead = dll_append(dhead, "D")
 print("Двусвязный список:", dll_repr(dhead))
 ```
-![](../../images/lab10/img03.png)
+![](../../images/lab10/2.png)
 
 ## 4. Результаты бенчмарков
 
-![](../../images/lab10/img01.png)
+![](../../images/lab10/3.png)
 
 ### bench.csv
 ```
